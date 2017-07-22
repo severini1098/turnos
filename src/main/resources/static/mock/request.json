@@ -1,0 +1,8 @@
+//database config:
+//https://dzone.com/articles/using-the-h2-database-console-in-spring-boot-with
+//POST
+{
+  "profesional": "http://localhost:8080/profesionals/1",
+  "date": "2017-Jul-22'T'22:10:46Z",
+  "sessionDuration": 45
+}
