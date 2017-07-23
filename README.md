@@ -4,7 +4,7 @@
 ```
 {
   "profesional": "http://localhost:8080/profesionals/1",
-  "date": "2017-Jul-22'T'22:10:46Z",
+  "horarioDeComienzo": "2017-07-23T18:09:52.540Z",
   "sessionDuration": 45
 }
 ```
