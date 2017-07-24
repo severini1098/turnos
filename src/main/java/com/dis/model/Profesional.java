@@ -1,5 +1,7 @@
 package com.dis.model;
 
+import io.swagger.annotations.ApiModel;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -8,6 +10,7 @@ import java.io.Serializable;
  */
 @Entity
 @Table(name = "PROFESIONAL")
+@ApiModel
 public class Profesional implements Serializable{
 
     @Id

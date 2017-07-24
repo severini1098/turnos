@@ -1,5 +1,8 @@
 package com.dis.model;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -11,6 +14,7 @@ import java.io.Serializable;
 public class Turno implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @ApiModelProperty(notes = "El id autogenerados")
     private long id;
 
     @ManyToOne(fetch=FetchType.LAZY)
