@@ -2,6 +2,7 @@ package com.dis.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * Created by Ing. Diego Ignacio Severini on 22/7/2017.
@@ -15,6 +16,9 @@ public class Profesional implements Serializable{
     private long profesional_id;
     private String nombre;
     private String apellido;
+    
+    @OneToMany(targetEntity = com.dis.model.Turno.class, mappedBy = "profesional")
+    private List<Turno> turnos;
 
     public String getNombre() {
         return nombre;
