@@ -3,22 +3,15 @@ package com.dis.model;
 import com.dis.utils.JsonDateSerializer;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by Ing. Diego Ignacio Severini on 21/7/2017.
  */
 @Entity
-@Table(name = "TURNO")
 public class Turno implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,19 +21,18 @@ public class Turno implements Serializable {
     @JoinColumn(name = "profesional_id", nullable = false)
     private Profesional profesional;
     
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "paciente_id", nullable = false)
-    private Paciente paciente;
+    @ManyToMany(targetEntity = com.dis.model.Paciente.class)
+    private List<Paciente> pacientes;
 
     private Date horarioDeComienzo;
     private int sessionDuration;
 
-    public Paciente getPaciente() {
-        return paciente;
+    public List<Paciente> getPaciente() {
+        return pacientes;
     }
 
-    public void setPaciente(Paciente paciente) {
-        this.paciente = paciente;
+    public void setPaciente(List<Paciente> paciente) {
+        this.pacientes = paciente;
     }
 
     public int getSessionDuration() {
