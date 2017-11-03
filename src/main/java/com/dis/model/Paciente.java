@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import java.util.List;
 
 /**
  * Created by diego.severini on 7/25/2017.
@@ -20,6 +22,17 @@ public class Paciente {
     private String dni;
     private String telefono;
     private String mail;
+    
+    @ManyToMany(targetEntity = com.dis.model.Turno.class, mappedBy = "pacientes")
+    private List<Turno> turnos;
+
+    public List<Turno> getTurnos() {
+        return turnos;
+    }
+
+    public void setTurnos(List<Turno> turnos) {
+        this.turnos = turnos;
+    }
 
     public String getNombre() {
         return nombre;
@@ -60,4 +73,6 @@ public class Paciente {
     public void setMail(String mail) {
         this.mail = mail;
     }
+
+    public long getPaciente_id() { return paciente_id; }
 }

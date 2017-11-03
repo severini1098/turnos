@@ -8,5 +8,10 @@ INSERT INTO paciente VALUES
 INSERT INTO turno VALUES
   (1, '2017-07-25 16:25:00.0', 45, 1, 1),
   (2, '2017-07-25 17:10:00.0', 45, 2, 1);
+
+INSERT INTO turno_pacientes VALUES
+  (1, 1),
+  (1, 2),
+  (2, 2);
   
 
